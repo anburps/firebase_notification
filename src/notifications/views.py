@@ -30,7 +30,6 @@ def send_push_notification(fcm_token, product_name):
         ),
         token=fcm_token
     )
-
     try:
         response = messaging.send(message)
         print(f'Successfully sent message: {response}')
