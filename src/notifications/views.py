@@ -22,7 +22,22 @@ def save_fcm_token(request):
             return JsonResponse({'error': 'No token provided'}, status=400)
     return JsonResponse({'error': 'Invalid request'}, status=400)
 
+def send_push_notification(fcm_token, product_name):
+    message = messaging.Message(
+        notification=messaging.Notification(
+            title="New Product Created!",
+            body=f"Check out our new product: {product_name}"
+        ),
+        token=fcm_token
+    )
 
+    try:
+        response = messaging.send(message)
+        print(f'Successfully sent message: {response}')
+        return response
+    except Exception as e:
+        print(f'Error sending message: {e}')
+        return None
 
 @csrf_exempt
 def create_product(request):
