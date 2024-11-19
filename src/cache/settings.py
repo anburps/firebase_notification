@@ -126,11 +126,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # FCM_URL = 'https://fcm.googleapis.com/fcm/send'
 
 
-
 STATIC_URL = '/static/'
-
-if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static"),  
-    ]
-
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"

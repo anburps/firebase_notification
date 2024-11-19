@@ -23,7 +23,8 @@
 </form>
 
 <script type="module">
-    import { requestPermissionAndSaveToken } from "{% static 'firebase-init.js' %}";
+    import { requestPermissionAndSaveToken } from "/static/firebase-init.js";
+    requestPermissionAndSaveToken();
 
     async function createProduct(event) {
         event.preventDefault(); 
