@@ -15,5 +15,4 @@ db.sqlite3-journal
 media
 src/staticfiles/credentials.json
 source
-static
-*static
+
